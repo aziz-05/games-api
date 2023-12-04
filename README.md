@@ -2,7 +2,7 @@
 an explore games app where you can navigate through many games see and see their details
 
 # technologies 
-node.js__
+node.js\
 Vue.js__
 Apollo__
 NestJS__
