@@ -1,0 +1,124 @@
+[
+    {
+        "title": "Galactic Adventures",
+        "description": "Embark on an epic journey through the cosmos.",
+        "version": 2,
+        "publishDay": "2022-05-15T18:30:00Z",
+        "platform": ["PC", "PlayStation", "Xbox"]
+    },
+    {
+        "title": "Mystic Quest",
+        "version": 1,
+        "publishDay": "2021-11-20T15:45:00Z",
+        "platform": ["Nintendo Switch"]
+    },
+    {
+        "title": "Cyber Nexus",
+        "description": "Dive into a futuristic world of cybernetic wonders.",
+        "publishDay": "2023-02-10T12:00:00Z",
+        "platform": ["PC", "PlayStation 5", "Xbox Series X"]
+    },
+    {
+        "title": "Fantasy Realms",
+        "version": 3,
+        "publishDay": "2022-08-03T20:00:00Z",
+        "platform": ["PC", "PlayStation 4", "Xbox One"]
+    },
+    {
+        "title": "Retro Racer",
+        "description": "Experience the thrill of classic arcade racing.",
+        "publishDay": "2021-12-08T14:20:00Z",
+        "platform": ["PC", "Nintendo Switch"]
+    },
+    {
+        "title": "Underwater Odyssey",
+        "version": 1,
+        "publishDay": "2023-01-30T10:10:00Z",
+        "platform": ["PlayStation 5", "Xbox Series X"]
+    },
+    {
+        "title": "Survival Frontier",
+        "description": "Struggle to survive in a vast open world.",
+        "publishDay": "2022-06-25T16:40:00Z",
+        "platform": ["PC", "PlayStation 4", "Xbox One"]
+    },
+    {
+        "title": "Space Conquest",
+        "version": 2,
+        "publishDay": "2022-03-12T22:15:00Z",
+        "platform": ["PC", "PlayStation 5", "Xbox Series X"]
+    },
+    {
+        "title": "Mythical Heroes",
+        "description": "Unleash the power of ancient legends.",
+        "publishDay": "2021-10-05T19:00:00Z",
+        "platform": ["PlayStation 4", "Xbox One"]
+    },
+    {
+        "title": "Pixel Puzzler",
+        "version": 1,
+        "publishDay": "2023-04-18T11:30:00Z",
+        "platform": ["PC", "Nintendo Switch"]
+    },
+    {
+        "title": "Dystopian Nightmare",
+        "description": "Navigate a world on the brink of collapse.",
+        "publishDay": "2022-01-17T17:05:00Z",
+        "platform": ["PC", "PlayStation 5", "Xbox Series X"]
+    },
+    {
+        "title": "Enchanted Kingdom",
+        "version": 3,
+        "publishDay": "2022-09-22T13:55:00Z",
+        "platform": ["PlayStation 4", "Xbox One"]
+    },
+    {
+        "title": "Steampunk Skies",
+        "description": "Soar through the clouds in a steampunk airship.",
+        "version": 2,
+        "publishDay": "2021-11-08T14:45:00Z",
+        "platform": ["PC", "PlayStation 5", "Xbox Series X"]
+    },
+    {
+        "title": "Epic Sports Challenge",
+        "publishDay": "2023-03-05T16:20:00Z",
+        "platform": ["PlayStation 4", "Xbox One"]
+    },
+    {
+        "title": "Wild West Outlaws",
+        "description": "Become the most notorious outlaw in the Wild West.",
+        "version": 1,
+        "publishDay": "2022-07-10T18:10:00Z",
+        "platform": ["PC", "Nintendo Switch"]
+    },
+    {
+        "title": "Magic Academy",
+        "version": 2,
+        "publishDay": "2022-04-02T12:30:00Z",
+        "platform": ["PC", "PlayStation 5", "Xbox Series X"]
+    },
+    {
+        "title": "Urban Warfare",
+        "description": "Navigate the dangerous streets of a dystopian city.",
+        "publishDay": "2021-12-30T20:45:00Z",
+        "platform": ["PlayStation 4", "Xbox One"]
+    },
+    {
+        "title": "Futuristic Racing League",
+        "version": 3,
+        "publishDay": "2022-10-15T15:00:00Z",
+        "platform": ["PC", "PlayStation 5", "Xbox Series X"]
+    },
+    {
+        "title": "Haunted Mansion",
+        "description": "Explore a spooky mansion filled with secrets.",
+        "publishDay": "2023-05-08T14:55:00Z",
+        "platform": ["PC", "Nintendo Switch"]
+    },
+    {
+        "title": "Medieval Kingdoms",
+        "version": 1,
+        "publishDay": "2022-02-18T17:30:00Z",
+        "platform": ["PlayStation 4", "Xbox One"]
+    }
+]

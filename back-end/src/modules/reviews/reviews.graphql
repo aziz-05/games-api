@@ -1,0 +1,24 @@
+type Review {
+  id: ID
+  rating: Int!
+  content: String!
+  author: Author!
+  game: Game!
+}
+
+type Query {
+  reviews: [Review]
+  review(id: ID!): Review
+}
+
+type Mutation {
+  addReview(review: AddReviewInput!): Review
+}
+
+input AddReviewInput {
+  rating: Int!
+  content: String!
+  description: String
+  authorId: Int!
+  gameId: Int!
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Alice Johnson",
+    "verified": true
+  },
+  {
+    "name": "Bob Smith",
+    "verified": false
+  },
+  {
+    "name": "Charlie Davis",
+    "verified": true
+  },
+  {
+    "name": "Diana White",
+    "verified": false
+  },
+  {
+    "name": "Ethan Turner",
+    "verified": true
+  },
+  {
+    "name": "Fiona Miller",
+    "verified": false
+  },
+  {
+    "name": "Gregory Rodriguez",
+    "verified": true
+  },
+  {
+    "name": "Holly Sanchez",
+    "verified": false
+  },
+  {
+    "name": "Ian Baker",
+    "verified": true
+  },
+  {
+    "name": "Julia Turner",
+    "verified": false
+  },
+  {
+    "name": "Kevin Taylor",
+    "verified": true
+  },
+  {
+    "name": "Linda Baker",
+    "verified": false
+  },
+  {
+    "name": "Michael Johnson",
+    "verified": true
+  },
+  {
+    "name": "Natalie White",
+    "verified": false
+  },
+  {
+    "name": "Oliver Davis",
+    "verified": true
+  },
+  {
+    "name": "Penelope Smith",
+    "verified": false
+  },
+  {
+    "name": "Quincy Turner",
+    "verified": true
+  },
+  {
+    "name": "Rachel Rodriguez",
+    "verified": false
+  },
+  {
+    "name": "Samuel Baker",
+    "verified": true
+  },
+  {
+    "name": "Tara Taylor",
+    "verified": false
+  }
+]

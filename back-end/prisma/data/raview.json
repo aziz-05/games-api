@@ -1,0 +1,122 @@
+[
+  {
+    "rating": 4,
+    "content": "Engaging storyline and dynamic gameplay!",
+    "authorId": 1,
+    "gameId": 2
+  },
+  {
+    "rating": 5,
+    "content": "Immersive world with stunning graphics and sound.",
+    "authorId": 2,
+    "gameId": 8
+  },
+  {
+    "rating": 3,
+    "content": "Good game, but some mechanics need improvement.",
+    "authorId": 3,
+    "gameId": 13
+  },
+  {
+    "rating": 5,
+    "content": "A masterpiece of modern gaming, worth every penny!",
+    "authorId": 4,
+    "gameId": 7
+  },
+  {
+    "rating": 4,
+    "content": "Great open-world exploration and quest variety.",
+    "authorId": 5,
+    "gameId": 16
+  },
+  {
+    "rating": 3,
+    "content": "Decent game, but lacks depth in character development.",
+    "authorId": 6,
+    "gameId": 5
+  },
+  {
+    "rating": 5,
+    "content": "Incredible attention to detail and atmospheric design.",
+    "authorId": 7,
+    "gameId": 11
+  },
+  {
+    "rating": 4,
+    "content": "Addictive gameplay with strategic depth.",
+    "authorId": 8,
+    "gameId": 19
+  },
+  {
+    "rating": 3,
+    "content": "Interesting concept, but the execution falls short.",
+    "authorId": 9,
+    "gameId": 4
+  },
+  {
+    "rating": 5,
+    "content": "Captivating storyline with unexpected twists.",
+    "authorId": 10,
+    "gameId": 1
+  },
+  {
+    "rating": 4,
+    "content": "Challenging puzzles and beautiful art style.",
+    "authorId": 11,
+    "gameId": 10
+  },
+  {
+    "rating": 3,
+    "content": "Decent game, but could use more variety in quests.",
+    "authorId": 12,
+    "gameId": 18
+  },
+  {
+    "rating": 5,
+    "content": "A fantastic journey with memorable characters.",
+    "authorId": 13,
+    "gameId": 15
+  },
+  {
+    "rating": 4,
+    "content": "Thrilling combat and epic boss battles.",
+    "authorId": 14,
+    "gameId": 6
+  },
+  {
+    "rating": 3,
+    "content": "Solid gameplay mechanics, but lacking in innovation.",
+    "authorId": 15,
+    "gameId": 14
+  },
+  {
+    "rating": 5,
+    "content": "A true gem in the RPG genre, highly recommended!",
+    "authorId": 16,
+    "gameId": 3
+  },
+  {
+    "rating": 4,
+    "content": "Intuitive controls and visually stunning landscapes.",
+    "authorId": 17,
+    "gameId": 20
+  },
+  {
+    "rating": 3,
+    "content": "Interesting concept, but the story could be more engaging.",
+    "authorId": 18,
+    "gameId": 12
+  },
+  {
+    "rating": 5,
+    "content": "A must-play for strategy game enthusiasts!",
+    "authorId": 19,
+    "gameId": 9
+  },
+  {
+    "rating": 4,
+    "content": "Well-crafted narrative and emotionally impactful.",
+    "authorId": 20,
+    "gameId": 17
+  }
+]

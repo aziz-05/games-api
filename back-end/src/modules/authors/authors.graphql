@@ -1,0 +1,21 @@
+type Author {
+  id: ID
+  name: String!
+  verified: Boolean!
+  reviews: [Review!]
+  games: [Game!]
+}
+
+type Query {
+  authors: [Author]
+  author(id: ID!): Author
+}
+
+type Mutation {
+  addAuthor(author: AddAuthorInput!): Author
+}
+
+input AddAuthorInput {
+  name: String!
+  verified: Boolean!
+}
