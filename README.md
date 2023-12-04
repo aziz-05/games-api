@@ -10,7 +10,6 @@ GraphQL
 Prisma
 PostgreSQL
 
-
 # in front-end run
 npm install
 npm run dev
