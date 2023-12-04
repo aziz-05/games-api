@@ -1,14 +1,14 @@
 # games-api
 an explore games app where you can navigate through many games see and see their details
 
-#technologies 
-node.js
-Vue.js
-Apollo
-NestJS
-GraphQL
-Prisma
-PostgreSQL
+# technologies 
+node.js__
+Vue.js__
+Apollo__
+NestJS__
+GraphQL__
+Prisma__
+PostgreSQL__
 
 # in front-end run
 npm install
