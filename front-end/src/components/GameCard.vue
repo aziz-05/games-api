@@ -121,7 +121,7 @@ p {
   border: 5px solid;
   display: flex;
   flex-direction: column;
-  background-color: rgb(189, 228, 198);
+  background-color: rgb(216, 231, 219);
   border: none;
   min-width: 100%;
   justify-content: center;

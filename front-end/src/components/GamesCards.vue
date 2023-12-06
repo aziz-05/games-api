@@ -55,10 +55,13 @@ const navigateToGame = (game) => {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
   margin-bottom: 5px;
   transition: all 0.4s;
+  border-radius: 2%;
+  box-shadow: 1px 1px 10px rgba(88, 170, 68, 0.6);
+  transition: all 0.5s;
 }
 
 .card img:hover {
-  box-shadow: 1px 1px 10px rgba(88, 170, 68, 0.6);
+  box-shadow: 3px 3px 12px rgba(72, 146, 54, 0.6);
 }
 
 .card .card-text {
