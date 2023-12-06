@@ -142,7 +142,8 @@ export default {
 }
 
 .input-field:focus {
-  border-color: #68ca78;
+  box-shadow: 0 0 3pt 0.5pt #1aaa62;
+  outline: none;
 }
 
 .save-button,

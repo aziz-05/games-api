@@ -118,7 +118,6 @@ header {
 }
 
 header input {
-  z-index: 10000;
   border: none;
   background-color: rgba(32, 184, 108, 0.1);
   padding: 10px;

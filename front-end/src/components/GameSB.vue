@@ -32,6 +32,12 @@
       type="number"
       placeholder="Game ID"
     />
+    <input
+      v-model="gameTitleToDelete"
+      class="input-field"
+      type="title"
+      placeholder="Game Title"
+    />
     <button class="delete-button" @click="deleteGame">Delete</button>
   </div>
 
@@ -100,6 +106,7 @@ export default {
         version: "",
       },
       gameIdToDelete: null,
+      gameTitleToDelete: "",
       updatedGameid: null,
       updatedGame: {
         title: "",
@@ -128,7 +135,7 @@ export default {
     deleteGame() {
       // Dispatch an action to delete a game from the store
       const gameId = parseInt(this.gameIdToDelete);
-      this.deleteexistGame({ id: gameId });
+      this.deleteexistGame({ id: gameId, title: this.gameTitleToDelete });
       this.resetInputs();
     },
     updateGame() {
@@ -141,6 +148,7 @@ export default {
     resetInputs() {
       this.newGame = { title: "", description: "" };
       this.gameIdToDelete = null;
+      this.gameTitleToDelete = "";
       this.updatedGame = { id: null, title: "", description: "" };
     },
   },
@@ -180,7 +188,8 @@ export default {
 }
 
 .input-field:focus {
-  border-color: #68ca78;
+  box-shadow: 0 0 3pt 0.5pt #1aaa62;
+  outline: none;
 }
 
 .save-button,

@@ -20,7 +20,7 @@ const navigateToGame = (game) => {
           <h4>{{ game.title }}</h4>
         </div>
 
-        <div class="version">varsion: {{ game.version }}</div>
+        <div class="version">version: {{ game.version }}</div>
       </div>
       <div class="platforms">
         <div class="platform" v-for="gameP in game.platform">[{{ gameP }}]</div>

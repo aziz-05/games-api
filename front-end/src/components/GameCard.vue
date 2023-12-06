@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { useQuery } from "@vue/apollo-composable";
 import { ref, computed, watch, watchEffect } from "vue";
 import gqlGameQuery from "../db/querys/game.js";
+import ReviewsView from "../views/ReviewsView.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -24,7 +25,8 @@ const showContact = (id) => {
 </script>
 <template>
   <div v-if="loading">Loading...</div>
-  <div class="container" v-else-if="game">
+
+  <div class="container" v-else-if="result">
     <div class="card mb-3" style="width: 1000px">
       <div class="row">
         <div class="col-md-7 image">
@@ -66,6 +68,11 @@ const showContact = (id) => {
   <div v-else>
     <h1>Card not found</h1>
   </div>
+  <div class="container">
+    <div class="reviews-card">
+      <ReviewsView :reviews="game.reviews"></ReviewsView>
+    </div>
+  </div>
   <div class="contact">
     <RouterView />
   </div>
@@ -96,13 +103,31 @@ p {
 .contact-btn {
   display: flex;
   justify-content: end;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 .card {
+  display: flex;
   margin-top: 50px;
   border: none;
   justify-content: center;
   align-items: center;
+}
+
+.reviews-card {
+  border: 5px solid;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(189, 228, 198);
+  border: none;
+  min-width: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  white-space: wrap;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .card img {
@@ -116,10 +141,17 @@ p {
 .container {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 15px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 h5 {
-  font-size: 40px;
+  font-size: 30px;
+  margin-bottom: 50px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 600;
   background-image: linear-gradient(to left, rgb(19, 124, 66), #3aa868);

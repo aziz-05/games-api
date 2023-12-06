@@ -17,9 +17,9 @@ const randomState = ref("");
     <RouterView />
   </div>
 
-  <div class="footer">
+  <footer>
     <MainFooter />
-  </div>
+  </footer>
 </template>
 
 <style scoped>
@@ -37,7 +37,7 @@ const randomState = ref("");
 }
 
 footer {
-  position: relative;
+  margin-top: auto;
 }
 
 .container {
