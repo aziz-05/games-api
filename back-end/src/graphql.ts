@@ -66,7 +66,7 @@ export abstract class IMutation {
 
     abstract addGame(game: AddGameInput): Nullable<Game> | Promise<Nullable<Game>>;
 
-    abstract deleteGame(id: string): Nullable<Game> | Promise<Nullable<Game>>;
+    abstract deleteGame(id?: Nullable<string>, title?: Nullable<string>): Nullable<Game> | Promise<Nullable<Game>>;
 
     abstract updateGame(id: string, edits?: Nullable<EditGameInput>): Nullable<Game> | Promise<Nullable<Game>>;
 

@@ -5,6 +5,7 @@ import { UpdateGameInput } from './dto/update-game.input';
 import { Game } from '@prisma/client';
 import { ReviewsService } from '../reviews/reviews.service';
 import { AuthorsService } from '../authors/authors.service';
+import { title } from 'process';
 
 @Resolver('Game')
 export class GamesResolver {
@@ -28,8 +29,8 @@ export class GamesResolver {
   }
 
   @Mutation()
-  deleteGame(@Args('id')id : number) {
-    return this.gamesService.deleteGame(id);
+  deleteGame(@Args('id')id : number, @Args('title')title : string) {
+    return this.gamesService.deleteGame(id, title);
   }
 
   

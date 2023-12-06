@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateGameInput } from './dto/create-game.input';
 import { UpdateGameInput } from './dto/update-game.input';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { title } from 'process';
 
 @Injectable()
 export class GamesService {
@@ -44,11 +45,11 @@ export class GamesService {
     });
   }
 
-  async deleteGame(id: number) {
+  async deleteGame(id: number, title: string) {
     //db.games = db.games.filter((g) => g.id !== id.toString())
     id = Number(id);
     
-    return await this.prisma.game.deleteMany({where: {id}});
+    return await this.prisma.game.deleteMany({where: {OR: [{id},{title}] }});
   }
 
   async updateGame(id: number, EditGameInput: any) {

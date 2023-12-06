@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 import { GamesService } from "../src/modules/games/games.service"
 import { PrismaService } from '../src/prisma/prisma.service';
-import { Review } from 'src/graphql';
 const prisma = new PrismaService();
 
 const games = [
@@ -346,26 +345,27 @@ const reviews = [
 async function main() {
    
 
-     games.forEach(async entry => {
-        await prisma.game.create({
+     
+  reviews.forEach(async entry => {
+        await prisma.review.create({
             data: entry ,
         });
         
     })
-
-    authors.forEach(async entry => {
+   games.forEach(async entry => {
+        await prisma.game.create({
+            data: entry ,
+        });
+        
+     })
+   authors.forEach(async entry => {
         await prisma.author.create({
             data: entry ,
         });
         
     })
 
-    reviews.forEach(async entry => {
-        await prisma.review.create({
-            data: entry ,
-        });
-        
-    })
+    
 }
      
  
