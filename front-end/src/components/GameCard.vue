@@ -46,11 +46,11 @@ const showContact = (id) => {
                 >[{{ gameP }}]
               </small>
             </p>
-            <p class="card-text">
+            <p class="card-text" v-if="game.version">
               Varsion :
               <small class="text-body-secondary">{{ game.version }}</small>
             </p>
-            <p class="card-text">
+            <p class="card-text" v-if="game.description">
               Description :
               <small class="text-body-secondary"> {{ game.description }}</small>
             </p>
@@ -68,11 +68,13 @@ const showContact = (id) => {
   <div v-else>
     <h1>Card not found</h1>
   </div>
+
   <div class="container">
     <div class="reviews-card">
       <ReviewsView :reviews="game.reviews"></ReviewsView>
     </div>
   </div>
+
   <div class="contact">
     <RouterView />
   </div>

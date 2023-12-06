@@ -20,10 +20,15 @@ const navigateToGame = (game) => {
           <h4>{{ game.title }}</h4>
         </div>
 
-        <div class="version">version: {{ game.version }}</div>
+        <div class="version" v-if="game.version">
+          <span style="color: rgb(8, 90, 8)">version: </span>{{ game.version }}
+        </div>
       </div>
-      <div class="platforms">
-        <div class="platform" v-for="gameP in game.platform">[{{ gameP }}]</div>
+      <div class="platforms mb-1">
+        <div class="platform" v-for="gameP in game.platform">
+          [<span style="color: rgb(8, 90, 8)">{{ gameP }}</span
+          >]
+        </div>
       </div>
     </div>
   </div>
@@ -90,5 +95,11 @@ const navigateToGame = (game) => {
 .platform {
   overflow: hidden;
   white-space: nowrap;
+}
+
+h4 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 22.5px;
+  font-weight: 500;
 }
 </style>
