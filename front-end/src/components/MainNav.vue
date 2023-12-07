@@ -9,7 +9,7 @@ import { ref } from "vue";
 <template>
   <nav class="navbar">
     <div class="container">
-      <div class="nav-container">
+      <div class="left-container">
         <RouterLink style="text-decoration: none" to="/"
           ><a class="navbar-brand logo" href="">
             <img
@@ -32,13 +32,40 @@ import { ref } from "vue";
           ><button class="btn btn-outline-success">About</button></RouterLink
         >
       </div>
+      <div class="middle-container">
+        <div class="input">
+          <SearchInput />
+        </div>
+      </div>
+      <div class="right-container">
+        <div>
+          <RouterLink to="/login"
+            ><button class="btn btn-outline-secondary p-1">
+              login
+            </button></RouterLink
+          >
+          <RouterLink
+            active-class="active"
+            style="text-decoration: none"
+            to="/register"
+            ><button class="btn btn-outline-secondary p-1">
+              Sign up
+            </button></RouterLink
+          >
+        </div>
 
-      <div class="input">
-        <SearchInput />
-
-        <!-- {{randomState}}
-      <button @click="randomState = 'Hello there'">Click me</button>
-      --></div>
+        <RouterLink style="text-decoration: none" to="/">
+          <button class="profile">
+            <img
+              src="../assets/logoGame.png"
+              alt="Logo"
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top"
+            />
+          </button>
+        </RouterLink>
+      </div>
     </div>
   </nav>
 </template>
@@ -54,28 +81,47 @@ import { ref } from "vue";
   display: flex;
   justify-items: center;
 }
-.nav-container {
+.left-container,
+.right-container,
+.middle-container {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 10px;
   height: 50px;
 }
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.btn {
+
+.btn-outline-secondary,
+.btn-outline-success {
   border: none;
-  color: rgb(30, 83, 30);
-  transition: all 0.2s;
+  transition: all 0.3s;
+}
+.btn-outline-success:hover {
+  border: none;
+  background-color: rgb(131, 194, 159);
+}
+.right-container {
+  margin-right: 0;
 }
 
-.btn:hover {
-  color: white;
-  background-color: rgb(188, 230, 188);
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
+
+.profile {
+  display: flex;
+  border: 1px solid green;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
 .navbar {
   height: 75px;
   display: flex;

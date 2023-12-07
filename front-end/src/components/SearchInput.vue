@@ -12,23 +12,10 @@ import GamesCards from "./GamesCards.vue";
 import { useRoute, useRouter, RouterView } from "vue-router";
 
 const router = useRouter();
-const { result, loading, error } = useQuery(gqlGamesQuery);
-const gamesA = computed(() => result.value?.games ?? []);
-const search = ref(false);
-let games = ref(gamesA);
+
 const searchItem = ref("");
 
-watch(searchItem, () => {
-  // console.log(cc.value = c.filter(c => c.title.toLocaleLowerCase()).includes(searchItem.value.toLocaleLowerCase()));
-  //console.log(searchItem.value);
-  games = gamesA.value.filter((game) =>
-    game.title
-      .toLocaleLowerCase()
-      .includes(searchItem.value.toLocaleLowerCase())
-  );
-});
-
-const navigateToSearch = (game) => {
+const navigateToSearch = () => {
   router.push(`/search/${searchItem.value}`);
 };
 </script>
@@ -40,6 +27,7 @@ const navigateToSearch = (game) => {
     name="search"
     id="search"
     placeholder="search"
+    @keyup.enter="navigateToSearch"
   />
   <button
     class="btn btn-outline-success"

@@ -12,19 +12,25 @@ const randomState = ref("");
   <div class="main-nav">
     <MainNav />
   </div>
+  <div class="azaz">
+    <div class="boody">
+      <RouterView />
+    </div>
 
-  <div class="body">
-    <RouterView />
+    <footer>
+      <div class="main-footer">
+        <MainFooter />
+      </div>
+    </footer>
   </div>
-
-  <footer>
-    <MainFooter />
-  </footer>
 </template>
 
 <style scoped>
-.body {
+.boody {
   margin-top: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .main-nav {
   position: fixed;
@@ -36,7 +42,7 @@ const randomState = ref("");
   background-color: #00a087;
 }
 
-footer {
+.main-footer {
   margin-top: auto;
 }
 

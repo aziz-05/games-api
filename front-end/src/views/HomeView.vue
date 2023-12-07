@@ -66,7 +66,7 @@ watch(searchItem, () => {
       </header>
 
       <div class="options-container">
-        <GamesCards :games="games" :key="gamesKey" />
+        <GamesCards :games="games" />
       </div>
     </div>
   </div>
@@ -122,6 +122,7 @@ header input {
   background-color: rgba(32, 184, 108, 0.1);
   padding: 10px;
   border-radius: 5px;
+  transition: all 0.3s;
 }
 
 input[type="text"]:focus {
