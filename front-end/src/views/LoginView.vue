@@ -2,34 +2,53 @@
   <div class="auth-container">
     <h2>Login</h2>
     <form @submit.prevent="login" class="auth-form">
-      <label for="username">Username:</label>
-      <input v-model="username" type="text" id="username" required />
+      <label for="email">Email:</label>
+      <input v-model="email" type="text" id="email" required />
       <label for="password">Password:</label>
       <input v-model="password" type="password" id="password" required />
       <button type="submit">Login</button>
+      <!-- Display error message if authentication fails -->
+      <p v-if="showError" class="error-message">Invalid email or password</p>
     </form>
     <div class="mb-3 f-r-container">
       <RouterLink style="text-decoration: none" to="/forgot-password">
         Forgot my password
       </RouterLink>
-      <RouterLink style="text-decoration: none" to="/register"
-        ><button class="btn btn-outline-ligth">Register?</button></RouterLink
-      >
+      <RouterLink style="text-decoration: none" to="/register">
+        Register?
+      </RouterLink>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
+import gqlUsersQuery from "../db/querys/user.js";
+import { useQuery } from "@vue/apollo-composable";
+import { ref, computed } from "vue";
 
-const username = ref("");
+const router = useRouter();
+let user = ref("");
+const email = ref("");
 const password = ref("");
+const showError = ref(false); // New reactive variable to control error message visibility
 
-const login = () => {
+const { result, loading, error } = useQuery(gqlUsersQuery, {
+  id: "",
+  email: email,
+});
+
+const login = async () => {
   // Implement login logic (e.g., make API request to authenticate user)
-  console.log("Logging in with:", username.value, password.value);
-  // After successful login, you may redirect the user to another page
+  user = computed(() => result.value?.user ?? null);
+
+  if (user.value && user.value.password.trim() === password.value.trim()) {
+    // Redirect to the home page after successful login
+    router.push(`/home`);
+  } else {
+    // Set showError to true to display the error message
+    showError.value = true;
+  }
 };
 </script>
 
@@ -42,7 +61,7 @@ const login = () => {
 
 .auth-container {
   max-width: 400px;
-  margin: 15% auto;
+  margin: 10% auto;
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 8px;
@@ -57,6 +76,11 @@ h2 {
 .auth-form {
   display: flex;
   flex-direction: column;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
 }
 
 label {

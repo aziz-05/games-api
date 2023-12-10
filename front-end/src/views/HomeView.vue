@@ -14,13 +14,8 @@ import SideBarView from "./SideBarView.vue";
 const { result, loading, error } = useQuery(gqlGamesQuery);
 const gamesA = computed(() => result.value?.games ?? []);
 
-const gamesKey = ref(0);
 let games = ref(gamesA);
 let searchItem = ref("");
-
-const forceRender = () => {
-  gamesKey.value += 1;
-};
 
 watch(searchItem, () => {
   // console.log(cc.value = c.filter(c => c.title.toLocaleLowerCase()).includes(searchItem.value.toLocaleLowerCase()));

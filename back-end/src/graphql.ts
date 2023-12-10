@@ -39,6 +39,18 @@ export class AddReviewInput {
     gameId: number;
 }
 
+export class AddUserInput {
+    email: string;
+    name?: Nullable<string>;
+    password: string;
+}
+
+export class EditUserInput {
+    email?: Nullable<string>;
+    name?: Nullable<string>;
+    password?: Nullable<string>;
+}
+
 export class Author {
     id?: Nullable<string>;
     name: string;
@@ -59,6 +71,10 @@ export abstract class IQuery {
     abstract reviews(): Nullable<Nullable<Review>[]> | Promise<Nullable<Nullable<Review>[]>>;
 
     abstract review(id: string): Nullable<Review> | Promise<Nullable<Review>>;
+
+    abstract user(id?: Nullable<string>, email?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;
+
+    abstract users(): Nullable<Nullable<User>[]> | Promise<Nullable<Nullable<User>[]>>;
 }
 
 export abstract class IMutation {
@@ -71,6 +87,12 @@ export abstract class IMutation {
     abstract updateGame(id: string, edits?: Nullable<EditGameInput>): Nullable<Game> | Promise<Nullable<Game>>;
 
     abstract addReview(review: AddReviewInput): Nullable<Review> | Promise<Nullable<Review>>;
+
+    abstract addUser(user: AddUserInput): Nullable<User> | Promise<Nullable<User>>;
+
+    abstract updateUser(id: string, edits?: Nullable<EditUserInput>): Nullable<User> | Promise<Nullable<User>>;
+
+    abstract deleteUser(id?: Nullable<string>, name?: Nullable<string>): Nullable<User> | Promise<Nullable<User>>;
 }
 
 export class Game {
@@ -90,6 +112,13 @@ export class Review {
     content: string;
     author: Author;
     game: Game;
+}
+
+export class User {
+    id?: Nullable<string>;
+    name?: Nullable<string>;
+    email: string;
+    password: string;
 }
 
 type Nullable<T> = T | null;

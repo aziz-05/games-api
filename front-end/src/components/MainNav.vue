@@ -40,17 +40,10 @@ import { ref } from "vue";
       <div class="right-container">
         <div>
           <RouterLink to="/login"
-            ><button class="btn btn-outline-secondary p-1">
-              login
-            </button></RouterLink
+            ><button class="btn btn-light p-1">login</button></RouterLink
           >
-          <RouterLink
-            active-class="active"
-            style="text-decoration: none"
-            to="/register"
-            ><button class="btn btn-outline-secondary p-1">
-              Sign up
-            </button></RouterLink
+          <RouterLink to="/register"
+            ><button class="btn btn-light p-1">Sign up</button></RouterLink
           >
         </div>
 

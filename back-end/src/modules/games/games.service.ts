@@ -6,31 +6,26 @@ import { title } from 'process';
 
 @Injectable()
 export class GamesService {
-  constructor(private prisma: PrismaService){}
-  
+  constructor(private prisma: PrismaService) {}
 
   games() {
     return this.prisma.game.findMany();
-    
   }
 
-   game(id: number) {
+  game(id: number) {
     id = Number(id);
-     return this.prisma.game.findUnique({ where: { id: id } });
-    
+    return this.prisma.game.findUnique({ where: { id: id } });
   }
-
 
   async findAll(id: number) {
-    return await this.prisma.game.findUnique({ 
+    return await this.prisma.game.findUnique({
       where: {
-       id
+        id,
+      },
+    });
   }
-})
 
-}
-
-   async addGame(AddGameInput: any) {
+  async addGame(AddGameInput: any) {
     /*
     let theGame = {
       ...game, 
@@ -39,17 +34,18 @@ export class GamesService {
     db.games.push(theGame)
 */
 
-    
-    return  await this.prisma.game.create({
-      data :{ ...AddGameInput},
+    return await this.prisma.game.create({
+      data: { ...AddGameInput },
     });
   }
 
   async deleteGame(id: number, title: string) {
     //db.games = db.games.filter((g) => g.id !== id.toString())
     id = Number(id);
-    
-    return await this.prisma.game.deleteMany({where: {OR: [{id},{title}] }});
+
+    return await this.prisma.game.deleteMany({
+      where: { OR: [{ id }, { title }] },
+    });
   }
 
   async updateGame(id: number, EditGameInput: any) {
@@ -63,10 +59,9 @@ export class GamesService {
     return db.games.find((g) => g.id === id.toString())
     */
     id = Number(id);
-    return await this.prisma.game.update({data :{...EditGameInput}, where: {id}});
-
+    return await this.prisma.game.update({
+      data: { ...EditGameInput },
+      where: { id },
+    });
   }
-  
-
- 
 }

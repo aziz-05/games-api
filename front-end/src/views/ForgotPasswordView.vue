@@ -23,7 +23,7 @@ export default {
 
     const resetPassword = () => {
       // Implement logic to send a password reset email (e.g., make API request)
-      console.log("Resetting password for email:", email.value);
+      alert(`Resetting password for email: ${email.value}`);
       // Provide feedback to the user (success or failure)
     };
 
@@ -44,7 +44,7 @@ export default {
 
 .auth-container {
   max-width: 400px;
-  margin: 15% auto;
+  margin: 10% auto;
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 8px;

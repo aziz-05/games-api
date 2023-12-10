@@ -3,12 +3,22 @@
     <h2>Register</h2>
     <form @submit.prevent="register" class="auth-form">
       <label for="username">Username:</label>
-      <input v-model="username" type="text" id="username" required />
+      <input v-model="newUser.name" type="text" id="username" required />
       <label for="email">Email:</label>
-      <input v-model="email" type="email" id="email" required />
+      <input v-model="newUser.email" type="email" id="email" required />
       <label for="password">Password:</label>
-      <input v-model="password" type="password" id="password" required />
+      <input
+        v-model="newUser.password"
+        type="password"
+        id="password"
+        required
+      />
       <button type="submit">Register</button>
+      <p v-if="showError" class="error-message">
+        <div v-for="error in result.errors">
+            {{ error.message.includes("Unique constraint failed") ? "Email Aleary Exist" : error.message}}
+        </div>
+      </p>
     </form>
     <div class="mb-3 f-r-container">
       <RouterLink style="text-decoration: none" to="/login"
@@ -19,16 +29,37 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import gqlAddUserMutation from "../db/mutation/addUser";
+import { useMutation, useQuery } from "@vue/apollo-composable";
+import { useRouter } from "vue-router";
 
-const username = ref("");
-const email = ref("");
-const password = ref("");
+const router = useRouter();
+let newUser = ref();
+const showError = ref(false);
+let result = ref("");
 
-const register = () => {
-  // Implement registration logic (e.g., make API request to create a new user)
-  console.log("Registering user:", username.value, password.value);
-  // After successful registration, you may redirect the user to another page
+const { mutate: addNewUser, error, loading } = useMutation(gqlAddUserMutation);
+newUser = {
+  name: "",
+  email: "",
+  password: "",
+};
+
+const register = async () => {
+  try {
+    // Implement registration logic (e.g., make API request to create a new user)
+    result = await addNewUser({ user: newUser });
+    if (result.errors) {
+      showError.value = true;
+    } else {
+      router.push(`/login`);
+    }
+  } catch (e) {
+    // Handle any unexpected errors during the API request
+    showError.value = true;
+    console.error(e);
+  }
 };
 </script>
 
@@ -40,7 +71,7 @@ const register = () => {
 }
 .auth-container {
   max-width: 400px;
-  margin: 15% auto;
+  margin: 10% auto;
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 8px;
@@ -55,6 +86,11 @@ h2 {
 .auth-form {
   display: flex;
   flex-direction: column;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
 }
 
 label {

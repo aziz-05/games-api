@@ -6,6 +6,7 @@ import { AuthorsModule } from './modules/authors/authors.module';
 import { PrismaService } from './prisma/prisma.service';
 import { GamesModule } from './modules/games/games.module';
 import { ReviewsModule } from './modules/reviews/reviews.module';
+import { UsersModule } from './modules/users/users.module';
 
 
 @Module({
@@ -20,7 +21,8 @@ import { ReviewsModule } from './modules/reviews/reviews.module';
     }),
     AuthorsModule,
     GamesModule,
-    ReviewsModule
+    ReviewsModule,
+    UsersModule
   ],
   controllers: [],
   providers: [PrismaService],
