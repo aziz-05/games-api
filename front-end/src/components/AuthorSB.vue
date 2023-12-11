@@ -69,7 +69,7 @@ export default {
     },
     deleteAuthor() {
       // Implement logic to delete author (use Vuex actions or API calls)
-      console.log("Deleting author with ID:", this.authorIdToDelete);
+
       this.resetInputs();
     },
     resetInputs() {

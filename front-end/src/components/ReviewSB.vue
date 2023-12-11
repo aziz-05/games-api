@@ -91,7 +91,6 @@ export default {
     },
     deleteReview() {
       // Implement logic to delete review (use Vuex actions or API calls)
-      console.log("Deleting review with ID:", this.reviewIdToDelete);
       this.resetInputs();
     },
     resetInputs() {

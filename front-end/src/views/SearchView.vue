@@ -17,16 +17,11 @@ let games = ref("");
 const { result, loading, error } = useQuery(gqlGamesQuery);
 const gamesA = computed(() => result.value?.games ?? []);
 
-// console.log(cc.value = c.filter(c => c.title.toLocaleLowerCase()).includes(searchItem.value.toLocaleLowerCase()));
-//console.log(searchItem.value);
-
 function search() {
   const searchinput = route.params.searchinput;
   games = gamesA.value.filter((game) =>
     game.title.toLocaleLowerCase().includes(searchinput.toLocaleLowerCase())
   );
-
-  console.log(games);
 }
 
 watch(route, () => {

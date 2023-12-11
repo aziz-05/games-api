@@ -10,7 +10,6 @@ const route = useRoute();
 const gameId = parseInt(route.params.id);
 const { result, loading } = useQuery(gqlGameQuery, { id: gameId });
 watch(result, (value) => (game.value = value.game));
-console.log(game.value);
 
 //const game = cars.find(c => c.id === parseInt(route.params.id))
 </script>

@@ -18,7 +18,6 @@ let games = ref(gamesA);
 let searchItem = ref("");
 
 watch(searchItem, () => {
-  // console.log(cc.value = c.filter(c => c.title.toLocaleLowerCase()).includes(searchItem.value.toLocaleLowerCase()));
   games = gamesA.value.filter((game) =>
     game.title
       .toLocaleLowerCase()
