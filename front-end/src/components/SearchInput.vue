@@ -55,20 +55,6 @@ input[type="text"]:focus {
   outline: none;
 }
 
-.overlay {
-  position: absolute;
-  max-width: 100px;
-  max-height: 10000px;
-  float: left;
-  white-space: nowrap;
-  overflow: hidden;
-  background-color: rgb(0, 0, 0, 0.77);
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .btn {
   border: none;
   border-end-start-radius: 0px;

@@ -118,6 +118,7 @@ import { ref } from "vue";
 .navbar {
   height: 75px;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   background-color: white;
 }

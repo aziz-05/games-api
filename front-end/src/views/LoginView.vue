@@ -60,7 +60,7 @@ const login = async () => {
 }
 
 .auth-container {
-  max-width: 400px;
+  min-width: 350px;
   margin: 10% auto;
   padding: 20px;
   background-color: #f8f9fa;

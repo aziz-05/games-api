@@ -7,6 +7,7 @@ import { useQuery } from "@vue/apollo-composable";
 import { ref, computed, watch, watchEffect } from "vue";
 import gqlGameQuery from "../db/querys/game.js";
 import ReviewsView from "../views/ReviewsView.vue";
+import has from "lodash/has";
 
 const route = useRoute();
 const router = useRouter();
@@ -23,56 +24,62 @@ const showContact = (id) => {
   return router.push(`/cars/${id}/contact`);
 };
 </script>
+
 <template>
   <div v-if="loading">Loading...</div>
 
   <div class="container" v-else-if="result">
-    <div class="card mb-3" style="width: 1000px">
-      <div class="row">
-        <div class="col-md-7 image">
-          <img
-            :src="carss[game.id].image"
-            class="img-fluid rounded-start"
-            alt="..."
-            style="width: 100%; height: 100%"
-          />
-        </div>
-        <div class="col-md-8 info-card" style="width: 400px; height: 500px">
-          <div class="card-body">
-            <h5 class="card-title">{{ game.title }}</h5>
-            <p class="card-text">
-              Platform :
-              <small class="text-body-secondary" v-for="gameP in game.platform"
-                >[{{ gameP }}]
-              </small>
-            </p>
-            <p class="card-text" v-if="game.version">
-              Varsion :
-              <small class="text-body-secondary">{{ game.version }}</small>
-            </p>
-            <p class="card-text" v-if="game.description">
-              Description :
-              <small class="text-body-secondary"> {{ game.description }}</small>
-            </p>
+    <div class="card-container">
+      <div class="card mb-3" style="width: 1000px">
+        <div class="row">
+          <div class="col-md-7 image">
+            <img
+              :src="carss[game.id].image"
+              class="img-fluid rounded-start"
+              alt="..."
+              style="width: 100%; height: 100%"
+            />
           </div>
-          <div class="contact-btn">
-            <button class="btn btn-success" @click="showContact(game.id)">
-              Click for contact
-            </button>
+          <div class="col-md-8 info-card" style="width: 400px; height: 500px">
+            <div class="card-body">
+              <h5 class="card-title">{{ game.title }}</h5>
+              <p class="card-text">
+                Platform :
+                <small
+                  class="text-body-secondary"
+                  v-for="gameP in game.platform"
+                  >[{{ gameP }}]
+                </small>
+              </p>
+              <p class="card-text" v-if="game.version">
+                Varsion :
+                <small class="text-body-secondary">{{ game.version }}</small>
+              </p>
+              <p class="card-text" v-if="game.description">
+                Description :
+                <small class="text-body-secondary">
+                  {{ game.description }}</small
+                >
+              </p>
+            </div>
+            <div class="contact-btn">
+              <button class="btn btn-success" @click="showContact(game.id)">
+                Click for contact
+              </button>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div v-if="game.reviews.length !== 0" class="review-container">
+      <div class="reviews-card">
+        <ReviewsView :reviews="game.reviews"></ReviewsView>
       </div>
     </div>
   </div>
 
   <div v-else>
     <h1>Card not found</h1>
-  </div>
-
-  <div class="container">
-    <div class="reviews-card">
-      <ReviewsView :reviews="game.reviews"></ReviewsView>
-    </div>
   </div>
 
   <div class="contact">
@@ -112,6 +119,7 @@ p {
 .card {
   display: flex;
   margin-top: 50px;
+
   border: none;
   justify-content: center;
   align-items: center;
@@ -141,6 +149,13 @@ p {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.card-container,
+.review-container {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;

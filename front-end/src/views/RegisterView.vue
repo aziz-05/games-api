@@ -70,9 +70,10 @@ const register = async () => {
   justify-content: end;
 }
 .auth-container {
-  max-width: 400px;
+  
   margin: 10% auto;
   padding: 20px;
+  min-width: 350px;
   background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

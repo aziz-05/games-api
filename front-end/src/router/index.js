@@ -67,7 +67,19 @@ const router = createRouter({
             name: "not-found",
             component: NotFoundView
         }
-    ]
+    ],
+
+   
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+  }
+
+
 });
 
 export default router;

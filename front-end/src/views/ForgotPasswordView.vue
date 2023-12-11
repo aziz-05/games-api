@@ -43,7 +43,7 @@ export default {
 }
 
 .auth-container {
-  max-width: 400px;
+  max-width: 350px;
   margin: 10% auto;
   padding: 20px;
   background-color: #f8f9fa;

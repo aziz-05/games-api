@@ -26,9 +26,17 @@ const randomState = ref("");
 
 <style scoped>
 .body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
   margin-top: 75px;
 }
 .main-nav {
+  display: flex;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;

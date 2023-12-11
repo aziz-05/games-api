@@ -39,6 +39,11 @@ watch(result, (value) => {
 </script>
 
 <template>
+  <RouterLink to="/home"
+    ><button class="btn mt-2 back btn-outline-success p-1">
+      {{ "< " }}Back
+    </button></RouterLink
+  >
   <div v-if="games.length" class="options-container">
     <GamesCards :games="games" />
   </div>
@@ -61,6 +66,11 @@ h1 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: bold;
+}
+
+.back {
+  position: fixed;
+  left: 10px;
 }
 .container {
   margin-bottom: 10px;
