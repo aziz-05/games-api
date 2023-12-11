@@ -28,7 +28,6 @@ const randomState = ref("");
 .body {
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: center;
   justify-content: center;
 
